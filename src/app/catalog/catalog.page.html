@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+	<img slot="start" src="assets/img/logo.svg" class="logoImage">
+    <ion-title>Catálogo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="tertiary">
+
+  <ion-label><h6 *ngIf="categories"> Tipos de Ganado </h6></ion-label>
+  <ion-slides pager="true" *ngIf="categories">
+    <ion-slide *ngFor="let category of categories" (click)="goToCategory(category)">
+		<ion-card>
+			<h6 class="slide-title">{{category.title}}
+			<small>  Tipo:{{category.type}}</small></h6>
+			<img [src]="category.imagen" class="slide-image" />
+			<div class="line-separate"></div>
+		</ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="spacer"></div>
+  
+  <ion-label><h6 *ngIf="products"> Productos </h6></ion-label>
+  <ion-grid>
+    <ion-row align-items-end>
+      <ion-col col-4 *ngFor="let product of products;" on-click="goToProduct(product)">
+        <ion-card>
+          <img [src]="product.imagen" class="card-image" />
+          <div class="card-title" [innerHTML]="product.name"></div>
+          <div class="card-subtitle" [innerHTML]="product.category.name"></div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
