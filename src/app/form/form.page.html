@@ -12,12 +12,11 @@
 		<ion-icon slot="start" color="medium" name="paper"></ion-icon>
 		<ion-text color="medium"> Encuestas </ion-text>
 		</ion-item-divider>
-		<ion-item>
-			<h6>Te invitamos a que llenes el siguiente formulario<br/><small>Segundo Remate NELORE CICLO CORTO</small></h6>
-			<ion-button slot="end" expand="full" fill="outline" color="primary" (click)="goToForm('https://docs.google.com/forms/d/e/1FAIpQLScewGPhVRVvH9bAzSuEYgLeuRk5uEwQ_5ALptIZbeWM5MSWCQ/viewform?vc=0&c=0&w=1')">
+		<ion-item *ngFor="let form of formsList">
+			<h6>{{form.title}}<br/><small>{{form.subtitle}}</small></h6>
+			<ion-button slot="end" expand="full" fill="outline" color="primary" (click)="goToForm(form.url)">
 				Ir a Formulario
 			</ion-button>
-
 		</ion-item>
 		
 	</ion-item-group>

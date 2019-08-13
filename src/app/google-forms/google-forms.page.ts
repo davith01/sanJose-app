@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-google-forms',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./google-forms.page.scss'],
 })
 export class GoogleFormsPage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  
+  googleForm: any;
+  
+  constructor(
+	public route: ActivatedRoute,
+	public  sanitizer: DomSanitizer
+	) {
+	  this.route.queryParams.subscribe(params => {
+        if (params && params.url) {
+            this.googleForm = {};
+			this.googleForm.url = this.sanitizer.bypassSecurityTrustResourceUrl(params.url);
+        }
+      });
   }
 
+  ngOnInit() {	  
+  }
 }
