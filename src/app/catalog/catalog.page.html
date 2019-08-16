@@ -7,21 +7,17 @@
 
 <ion-content padding color="tertiary">
 
-  <ion-label><h6 *ngIf="categories"> Tipos de Ganado </h6></ion-label>
+  
   <ion-slides pager="true" *ngIf="categories">
     <ion-slide *ngFor="let category of categories" (click)="goToCategory(category)">
 		<ion-card>
-			<h6 class="slide-title">{{category.title}}
-			<small>  Tipo:{{category.type}}</small></h6>
 			<img [src]="category.imagen" class="slide-image" />
-			<div class="line-separate"></div>
 		</ion-card>
     </ion-slide>
   </ion-slides>
 
   <div class="spacer"></div>
   
-  <ion-label><h6 *ngIf="products"> Productos </h6></ion-label>
   <ion-grid>
     <ion-row align-items-end>
       <ion-col col-4 *ngFor="let product of products;" on-click="goToProduct(product)">

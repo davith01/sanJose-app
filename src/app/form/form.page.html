@@ -7,6 +7,9 @@
 
 
 <ion-content>
+	<ion-toolbar color="danger" *ngIf="error">
+	{{error}}
+	</ion-toolbar>
 	<ion-item-group>
 		<ion-item-divider  color="light">
 		<ion-icon slot="start" color="medium" name="paper"></ion-icon>

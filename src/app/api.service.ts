@@ -24,23 +24,29 @@ export class ApiService {
       const url = 'https://www.googleapis.com/drive/v3/files/1wHXbCHaFVm12GrutjJZiiqfhqs6bt5_I?key=AIzaSyACCBapjQh9JaSq05IG-cNYl4Iuaqox6No';
       const fileTransfer: FileTransferObject = this.transfer.create();
       const fileName = 'file_dom_forms.json';
+	  
+	  if(true) {
+		  const data = [{"title": "Te invitamos a que llenes el siguiente formulario","subtitle": "Segundo Remate NELORE CICLO CORTO","url": "https://docs.google.com/forms/d/e/1FAIpQLScewGPhVRVvH9bAzSuEYgLeuRk5uEwQ_5ALptIZbeWM5MSWCQ/viewform?vc=0&c=0&w=1"}]
+		  resolve({'data': data,'error':null});
+	  }
       
 	  fileTransfer.download(url, this.file.dataDirectory + fileName)
       .then((entry) => {
 		  this.file.readAsText(this.file.dataDirectory, fileName)
           .then(text => {
             // return data success
-			this.showMessage('sucess '+JSON.stringify(text));
-            resolve({'data': text,'error':null});
+			try {
+			    resolve({'data': null,'error':text});
+			} catch(e) {
+				resolve({'data': null,'error':e});
+			}
           })
           .catch(err => {
-			  this.showMessage('error '+JSON.stringify(err));
-			  resolve({'data': null, 'error': err});
+			  resolve({'data': null,'error':err});
 		  });
           
       }, (error) => {
         // handle error
-		this.showMessage('handle error '+JSON.stringify(error));
         resolve({'data': null, 'error':error});
       });
     });

@@ -18,11 +18,8 @@ export class MultimediaPage implements OnInit {
 
   ngOnInit() {
     this.videoPlayList = [{
-	  'id': 'O776f8snC00',	
-      'url': this.domSanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/OgeLyH_1JJE')
-    },{
-	  'id': 'TE1K5gyprBo',
-      'url': this.domSanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/TE1K5gyprBo')
+	  'id': 'bF2HuW99MuE',	
+      'url': this.domSanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/bF2HuW99MuE')
     }];
   }
   

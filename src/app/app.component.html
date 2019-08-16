@@ -1,3 +1,20 @@
-<ion-app>
+<ion-content>
+  
   <ion-router-outlet></ion-router-outlet>
-</ion-app>
+
+  <!-- fab placed in the center of the content with a list on each side -->
+  <!-- -- >
+  <ion-fab vertical="center" horizontal="center" slot="fixed" *ngIf="message">
+    <ion-card color="primary">
+       <ion-card-header>
+		  <ion-card-title>{{message.title}}</ion-card-title>
+          <ion-card-subtitle>{{message.subtitle}}</ion-card-subtitle>
+       </ion-card-header>
+
+       <ion-card-content [innerHTML]="message.text">
+       
+       </ion-card-content>
+    </ion-card>
+  </ion-fab>
+  <!-- -->
+</ion-content>

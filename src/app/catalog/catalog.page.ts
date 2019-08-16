@@ -21,37 +21,11 @@ export class CatalogPage implements OnInit {
   
   getCategories() {
 	this.categories = [{
-      'title': 'Brahman',
-	  'type': 'Carne',
-      'imagen': 'https://i.ytimg.com/vi/TvMbFPM8la8/maxresdefault.jpg',
+      'imagen': 'assets/img/vaca1-01.jpg',
     },{
-      'title': 'Charolais',
-	  'type': 'Carne',
-      'imagen': 'http://www.honduganado.com/wp-content/uploads/2015/01/bovins-charolais.jpg',
+      'imagen': 'assets/img/vaca2-01.jpg',
     },{
-	  'title': 'Angus',
-	  'type': 'Carne',
-      'imagen': 'https://i.ytimg.com/vi/KC09RGA2-qM/hqdefault.jpg',
-	},{
-	  'title': 'Holstein',
-	  'type': 'Leche',
-      'imagen': 'https://storage.contextoganadero.com/s3fs-public/styles/noticias_one/public/ganaderia/field_image/2018-08/foto_holstein_-autorizada.jpg?itok=QC5Evv0H',
-	},{
-	  'title': 'Brown Swiss',
-	  'type': 'Leche',
-      'imagen': 'http://www.perulactea.com/wp-content/uploads/2018/05/Asociaci%C3%B3n-Brown-Swiss-del-Per%C3%BA.gif',
-	},{
-	  'title': 'Jersey',
-	  'type': 'Leche',
-      'imagen': 'https://i.ytimg.com/vi/W3UDEY5_7L0/hqdefault.jpg',
-	},{
-	  'title': 'Simmental',
-	  'type': 'Doble Proposito',
-      'imagen': 'https://zoovetesmipasion.com/wp-content/uploads/2017/07/simmental05-1.jpg',
-	},{
-	  'title': 'Aberdeen',
-	  'type': 'Doble Proposito',
-      'imagen': 'https://i.ytimg.com/vi/OtO-4JVU1RQ/maxresdefault.jpg',
+      'imagen': 'assets/img/vaca3-01.jpg',
 	}];
   }
   

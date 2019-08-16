@@ -13,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+import { SocketIoModule } from 'ngx-socket-io';
+import { config } from './web-socket.service';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +26,8 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+	SocketIoModule.forRoot(config)
   ],
   providers: [
     StatusBar,
